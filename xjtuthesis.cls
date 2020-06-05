@@ -824,29 +824,39 @@
         \clearpage
 
     }
-    % \renewcommand\xjtudabianweiyuanhui{
-    %     \thispagestyle{empty}
-    %     \vspace*{.7cm}
-    %     \begin{center}
-    %         {\bf \sanhao 硕士学位论文答辩委员会}                
-    %         \vskip 1.8cm
-    %         {\bf \sanhao \xjtu@ctitle}
-    %         \vskip 6cm
-    %     \end{center}
-    %     {
-    %         \sanhao
-    %         \makebox{
-    %             {\CJKfamily{sun}答辩人：}  {\xjtu@cauthor}\\
-    %             {\CJKfamily{sun}答辩委员会委员：}\\
-    %             {\CJKfamily{sun}\quad 西安交通大学：} \underline{\makebox[6.2cm][c]{\xjtu@csubject}}\\
-    %             {\CJKfamily{sun}\quad 西安交通大学：} \underline{\makebox[6.2cm][c]{\xjtu@degreetype}}\\
-    %             {\CJKfamily{sun}\quad 西安交通大学：} \underline{\makebox[6.2cm][c]{\xjtu@csubject}}\\
-    %             {\CJKfamily{sun}\quad 西安交通大学：} \underline{\makebox[6.2cm][c]{\xjtu@degreetype}}\\
-    %             {\CJKfamily{sun}\quad 西安交通大学：} \underline{\makebox[6.2cm][c]{\xjtu@csubject}}\\    
-    %         }
-    %     }
-    %     \cleardoublepage    
-    % }
+    \renewcommand\xjtudabianweiyuanhui{
+        {
+            	%---------------------------------------------------------------------------------
+                % 答辩委员会
+                \newpage\thispagestyle{empty}
+                \begin{center}
+                    \parbox[t][0.7cm][t]{\textwidth}{}
+                    
+                    \begin{center}{\sanhao \bf 硕士学位论文答辩委员会}\end{center}
+                    
+                    \vspace{1cm}
+                    \begin{center}{\sanhao \bf \xjtu@ctitle }\end{center}
+                    
+                    \vspace{6cm}
+                    {\sanhao
+                        \begin{center} \renewcommand{\arraystretch}{1.5}
+                            \begin{tabular}{l}
+                                答辩人： XXX \\
+                                答辩委员会委员：\\
+                                \hspace{2em} XXXXXXXX 大学 XXX： \underline{\hspace{6em}} (主席) \\
+                                \hspace{2em} XXXXXXXX 大学 XXX： \underline{\hspace{6em}} \\ 
+                                \hspace{2em} XXXXXXXX 大学 XXX： \underline{\hspace{6em}} \\
+                                \hspace{2em} XXXXXXXX 大学 XXX： \underline{\hspace{6em}} \\
+                                \hspace{2em} XXXXXXXX 大学 XXX： \underline{\hspace{6em}} \\
+                                答辩时间： XXXX 年 XX 月 XX 日 \\
+                                答辩地点： XXXXXXXXXXXXXX \\
+                            \end{tabular} \renewcommand{\arraystretch}{1}
+                        \end{center} 
+                    }
+                \end{center}
+                \clearpage{\pagestyle{empty}\cleardoublepage}
+        }
+    }
     \renewcommand{\thefootnote}{\fnsymbol{footnote}}
     \renewcommand\xjtucinfopage{
         \chaptermark{摘\quad 要}
