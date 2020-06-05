@@ -16,6 +16,9 @@
 12. 目录中线的样式。
 13. 其它一些比较细节的问题。
 
+### 编译结果
+编译结果请参照<https://github.com/kohillyang/XJTUthesis-master-2020/blob/master/master.pdf>。
+
 ### 关于字体
 强烈建议在本地安装texlive2020进行编译，这种编译方法可以避免字体的问题。如果需要在overleaf等环境中编译，需要查询该环境所支持的字体列表，例如Overleaf支持的字体列表为：
 <https://www.overleaf.com/learn/latex/Questions/Which%20OTF%20or%20TTF%20fonts%20are%20supported%20via%20fontspec%3F>，若需要在Overleaf上编译，请去掉master.tex中的truefont选项，并使用xelatex和texlive2019进行编译。
