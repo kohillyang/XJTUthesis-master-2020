@@ -1,0 +1,79 @@
+% master.tex
+% Copyright 2016 Zheng Xie <xie.zheng777@gmail.com>
+% https://github.com/Tedxz/xjtuthesis-x
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Zheng Xie.
+%
+% xjtuthesis-x is a Derived Work of xjtuthesis. The original maintainer of
+% xjtuthesis is Weisi Dai (multiple1902 <multiple1902@gmail.com>),
+% who published the project on https://code.google.com/p/xjtuthesis/ (no
+% longer accessable). Currently, xjtuthesis is maintained by Aetf, and can
+% be accessed on https://github.com/Aetf/xjtuthesis.
+%
+% xjtuthesis-x includes bug fixes, new features and a user guide.
+% For detail, please refer to Readme.md.
+%
+% If you want to contribute to xjtuthesis-x or become the maintainer of
+% xjtuthesis-x, please feel free to contact me.
+
+\documentclass[
+    master,
+    truefont, % just turn it on when using Windows
+    %nofont, % remember to manally set the fonts
+    pdflinks,
+    %colorlinks,
+    %compact,
+    ]{xjtuthesis}
+% \usepackage[UTF8]{ctex}
+% \usepackage[utf8]{inputenc}
+\usepackage{etoolbox}
+\usepackage{fmtcount}
+\usepackage{overpic}
+\usepackage{lmodern}
+
+\preto{\section}{\setcounter{subsubsection}{0}}
+\graphicspath{{figures/}}
+\addbibresource{bibliography.bib}
+\begin{document}
+    \setmainfont{Times New Roman}
+    % 请修改 meta.tex 中的论文元信息
+    \input{meta.tex}
+
+    \xjtuchead
+    \xjtuehead
+    {
+        \includepdf[pages={1}]{figures/答辩委员会.pdf}
+        \thispagestyle{empty}
+        \cleardoublepage
+    }
+
+    \xjtucinfopage
+    \xjtueinfopage
+    \xjtutoc
+    \xjtutoe
+    \clearpage
+
+    \input{pages/denotation.tex} % 主要符号表可选
+
+    \xjtucontent
+        \input{pages/intro.tex}
+        \input{pages/docs.tex}
+    \xjtuendcontent
+
+    \input{pages/acknowledgements.tex}
+    \xjtubib
+    \input{pages/appendice.tex} % 附录可选
+    \input{pages/achievements.tex}
+    \xjtuacademicintegrity
+
+\end{document}

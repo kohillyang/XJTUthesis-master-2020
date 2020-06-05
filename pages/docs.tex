@@ -1,0 +1,152 @@
+\chapter{浮动格式}
+\echapter{Float Objects}
+    金溪民方仲永，世隶耕。仲永生五年，未尝识书具，忽啼求之。父异焉，借旁近与之，即书诗四句，并自为其名。其诗以养父母、收族为意，传一乡秀才观之。自是指物作诗立就，其文理皆有可观者。邑人奇之，稍稍宾客其父，或以钱币乞之。父利其然也，日扳仲永环谒于邑人，不使学。
+
+    余闻之也久。明道中，从先人还家，于舅家见之，十二三矣。令作诗，不能称前时之闻。又七年，还自扬州，复到舅家问焉。曰：“泯然众人矣。”
+
+    王子曰：仲永之通悟，受之天也。其受之天也，贤于才人远矣。卒之为众人，则其受于人者不至也。彼其受之天也，如此其贤也，不受之人，且为众人；今夫不受之天，固众人，又不受之人，得为众人而已耶？
+
+    \section{图片}
+    \esection{Images}
+        \begin{figure}[!ht]
+          \centering
+          \includegraphics[width=6.67cm]{XJTU.pdf}
+          \caption{西安交通大学}
+          \label{fig:xjtu}
+        \end{figure}
+
+        \begin{figure}[!ht]
+          \begin{minipage}{0.45\textwidth}
+              \centering
+              \includegraphics[width=6.67cm]{XJTU.pdf}
+              \caption{西安交通大学}
+              \label{fig:xjtu-left}
+          \end{minipage}
+          \begin{minipage}{0.45\textwidth}
+              \centering
+              \includegraphics[width=6.67cm]{XJTU.pdf}
+              \caption{西安交通大学}
+              \label{fig:xjtu-right}
+          \end{minipage}
+        \end{figure}
+          
+        \begin{figure}[!ht]
+          \centering
+          \subfloat[果毅力行]{
+              \includegraphics[width=6.67cm]{XJTU.pdf}
+              \label{fig:xjtu-sub-left}}
+          \subfloat[忠恕任事]{
+              \includegraphics[width=6.67cm]{XJTU.pdf}
+              \label{fig:xjtu-sub-right}}
+          \caption{子图}
+        \end{figure}
+          
+
+    \section{表格}
+    \esection{Tables}
+        \begin{table}[!ht]
+          \centering
+          \caption{一个简单的表格}
+          \label{tab:simple}
+          \wuhao
+          \begin{tabularx}{\linewidth}{XXXXX} \toprule 
+                & 一月 & 二月 & 三月 & 合计 \\ \midrule
+           东部 &    7 &    7 &    5 &   19 \\ 
+           西部 &    6 &    4 &    7 &   17 \\ 
+           南部 &    8 &    7 &    9 &   24 \\ 
+       \bf 合计 &   21 &   18 &   21 &   60 \\ \bottomrule
+          \end{tabularx}
+        \end{table}
+
+
+        \begin{table}[!ht]
+          %\begin{minipage}{\textwidth}
+          \begin{threeparttable}[h]
+            \centering
+            \caption{包含脚注的表格}
+            \label{tab:with-footnote}
+            \wuhao
+            \begin{tabularx}{\linewidth}{XXXXX} \toprule 
+                  & 一月 & 二月 & 三月 & 合计 \\ \midrule
+                  东部 &    7\tnote{1}
+                                &    7 &    5 &   19 \\ 
+             西部 &    6 &    4 &    7 &   17 \\ 
+             南部 &    8 &    7 &    9 &   24 \\ 
+             \bf 合计\tnote{2}
+                  &   21 &   18 &   21 &   60 \\ \bottomrule
+            \end{tabularx}
+          %\end{minipage}
+          \begin{tablenotes}
+          \item[1] 数据来自Word 97.
+          \item[2] Computed by \textsl{Mathematica} 8.
+          \end{tablenotes}
+          \end{threeparttable}
+        \end{table}
+
+        \begin{table}[!ht]
+          \centering
+          \caption{稍微复杂一点的表格}
+          \label{tab:complex}
+          \wuhao
+          \begin{tabularx}{\linewidth}{XXXXX} \toprule 
+                & \multicolumn{3}{c}{这是一句废话} &  \\ \cmidrule{2-4}
+                & 一月 & 二月 & 三月 & 合计 \\ \midrule
+           东部 &    7 &    7 &    5 &   19 \\ 
+           西部 &    6 &    4 &    7 &   17 \\ 
+           南部 &    8 &    7 &    9 &   24 \\ 
+       \bf 合计 &   21 &   18 &   21 &   60 \\ \bottomrule
+          \end{tabularx}
+        \end{table}
+
+        我制作了一个简单的表格（表\ref{tab:simple}）。
+
+
+\chapter{公式环境}
+\echapter{Formula Environment}
+
+    \begin{axiom}
+        \rm 两点间直线段距离最短。  
+        \begin{align}
+            x&\equiv y+1\pmod{m^2}\\
+            x&\equiv y+1\mod{m^2}\\
+            x&\equiv y+1\pod{m^2}
+        \end{align}
+    \end{axiom}
+
+    \begin{remark}
+    \rm 对齐的公式示例，它还同时演示了标号。
+    \begin{align}
+    \begin{split} 
+    \varphi(x,z)
+    &=z-\gamma_{10}x-\gamma_{mn}x^mz^n\\
+    &=z-Mr^{-1}x-Mr^{-(m+n)}x^mz^n
+    \end{split} \notag \\
+    \noindent\zeta^1&=(\xi^1)^2,\\
+    \zeta^1 &=\xi^0\xi^1,\\
+    \zeta^2 &=(\xi^1)^2,
+    \end{align}
+    \end{remark}
+
+    \begin{theorem}
+      \rm 对于直角三角形$ABC$， 若$a<c$且$b<c$， 则有
+        \begin{equation}
+          a^2+b^2=c^2
+        \end{equation}
+    \end{theorem}
+
+
+    \begin{exercise}
+          \rm 请列出温家宝的所有影视作品。
+    \end{exercise}
+    
+    {
+        \color{red} 公式引用应为式（\ref{equ:chap1:bayes}）的形式，部分老师可能要求为式~(\ref{equ:chap1:bayes})，请自行确定。
+    }
+    
+    贝叶斯公式如（\ref{equ:chap1:bayes}），其中 $p(y|\mathbf{x})$ 为后验；
+    $p(\mathbf{x})$ 为先验；分母 $p(\mathbf{x})$ 为归一化因子。
+    \begin{equation}
+        \label{equ:chap1:bayes}
+        p(y|\mathbf{x}) = \frac{p(\mathbf{x},y)}{p(\mathbf{x})}=
+        \frac{p(\mathbf{x}|y)p(y)}{p(\mathbf{x})} 
+    \end{equation}
