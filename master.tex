@@ -41,6 +41,29 @@
 \usepackage{overpic}
 \usepackage{lmodern}
 
+
+\usepackage{listings}		% 为了避免与页眉的兼容问题可将listings放入table环境中
+% 代码标题
+\renewcommand{\lstlistingname}{代码}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\lstset{%
+	language={[ISO]C++},				% 设置语言
+	alsolanguage=Matlab,				% 可以添加多个语言选项
+	alsolanguage=Verilog,
+	morekeywords={numerictype,fimath,fipref,fi,trh},
+	commentstyle=\color{codegreen},		% 注释颜色
+	keywordstyle=\color{blue},			% 代码关键字颜色
+	stringstyle=\color{codepurple},		% 代码中字符串颜色
+	frame=single,			% 设置边框, 
+	xleftmargin=1.7em,		% 设定listing左边空白 
+	numbers=left,			% 左侧显示行号
+	numberstyle=\small,		% 行号字体用小号
+	breaklines=true,		% 对过长的代码自动换行 
+	columns=flexible,		% 调整字符之间的距离
+	tabsize=4				% table 长度
+}
+
 \preto{\section}{\setcounter{subsubsection}{0}}
 \graphicspath{{figures/}}
 \addbibresource{bibliography.bib}
@@ -75,7 +98,9 @@
 
     \input{pages/acknowledgements.tex}
     \xjtubib
-    \input{pages/appendice.tex} % 附录可选
+    {
+        \input{pages/appendice.tex} % 附录可选
+    }
     \input{pages/achievements.tex}
     \xjtuacademicintegrity
 

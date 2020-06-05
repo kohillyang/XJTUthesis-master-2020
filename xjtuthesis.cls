@@ -486,11 +486,13 @@
 
 % The denotation environment
 \newenvironment{denotation}[1][2.5cm]{ % many thanks to THUthesis!
-  \chapter*{主要符号表}
+  
+  \chapter*{\vspace{6mm}主要符号表}
   \addcontentsline{toc}{chapter}{主要符号表}
   \chaptermark{主要符号表}
   \noindent\begin{list}{}%
-    {\vskip-30bp %\xiaosi[1.6]
+    {
+     \vspace{-6mm}
      \renewcommand\makelabel[1]{##1\hfil}
      \setlength{\labelwidth}{#1} % 标签盒子宽度
      \setlength{\labelsep}{0.5cm} % 标签与列表文本距离
@@ -874,7 +876,7 @@
         \vspace{-1mm}
         \begin{center}
             \phantomsection
-            \addcontentsline{toc}{chapter}{摘\quad 要}
+            \addcontentsline{toc}{chapter}{摘要}
             \addcontentsline{toe}{chapter}{ABSTRACT (Chinese)}
           \sanhao
           摘\quad 要\footnote{
@@ -1065,3 +1067,4 @@
 \titlecontents{chapter}[0em]{}{\thecontentslabel\quad}{}{\menudotfill\contentspage[{\makebox[0pt][r]{\thecontentspage}}]}
 \titlecontents{section}[1em]{}{\thecontentslabel\quad}{}{\menudotfill\contentspage[{\makebox[0pt][r]{\thecontentspage}}]}
 \titlecontents{subsection}[2em]{}{\thecontentslabel\quad}{}{\menudotfill\contentspage[{\makebox[0pt][r]{\thecontentspage}}]}
+

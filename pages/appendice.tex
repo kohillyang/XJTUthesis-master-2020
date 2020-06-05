@@ -1,12 +1,74 @@
-\xjtuspchapter{附录}{\vspace{-4mm}附\quad 录}{Appendices}
+\setcounter{chapter}{1}
+\xjtuspchapter{附录A~公式定理证明}{\vspace{-4mm}附录A\quad 公式定理证明}{AppendProofs of Equations and Theoremsices}
+\renewcommand{\thefigure}{\Alph{chapter}-\arabic{figure}}
+\renewcommand{\thetable}{\Alph{chapter}-\arabic{table}}
+\renewcommand{\theequation}{\Alph{chapter}-\arabic{equation}}
+\renewcommand{\thelstlisting}{\Alph{chapter}-\arabic{lstlisting}}
+\renewcommand\thealgorithm{\Alph{chapter}-\arabic{algorithm}}
+\renewcommand\thesection{\Alph{chapter}.\arabic{section}}
+{
+    \color{red}
+    附录非强制性要求，如果论文中没有附录，可以省略《附录》。
+}
 % 单个附录用Appendix
 % \xjtuspchapter{附录}{附录}{Appendix}
 附录编号依次编为附录A，附录B。附录标题各占一行，按一级标题编排。每一个附录一般应另起一页编排，如果有多个较短的附录，也可接排。附录中的图表公式另行编排序号，与正文分开，编号前加“附录A-”字样。
 
+附录编号依次编为附录 A，附录 B。附录标题各按一级标题编排。附录中的图、表、公式另行编排序号，编号前加“附录A-”字样。这部分内容非强制性要求，如果论文中没有附录，可以省略。
 
+排版数学定理等环境时最好给环境添加结束符，以明确定理等内容的起止标志，方便阅读。官方模板未对这些内容进行规范，本模板中定义的结束符采用 $\Diamond$，例子的结束符采用 $\blacklozenge$，定理的结束符采用 $\square$，证明的结束符采用 $\blacksquare$。
 
-{
-    \color{red}
-    本部分内容非强制性要求，如果论文中没有附录，可以省略《附录》。
+\begin{enumerate}
+	\item 加法交换律，$\forall~x,y \in X$，$x+y = y+x \in X$；
+	\item 加法结合律，$\forall~x,y,z \in X$，$(x+y)+z = x+(y+z)$；
+	\item 加法的零元，$\exists~0 \in X$，使得 $\forall~x \in X$，$0+x = x$；
+	\item 加法的负元，$\forall~x \in X$，$\exists~-x \in X$，使得 $x+(-x) = x-x = 0$。
+	\item 数乘结合律，$\forall~\alpha,\beta \in \mathbb{F}$，$\forall~x \in X$，$(\alpha\beta)x = \alpha(\beta x) \in X$；
+	\item 数乘分配律，$\forall~\alpha \in \mathbb{F}$，$\forall~x,y \in X$，$\alpha(x+y) = \alpha x + \alpha y$；
+	\item 数乘分配律，$\forall~\alpha,\beta \in \mathbb{F}$，$\forall~x \in X$，$(\alpha+\beta)x = \alpha x + \beta x$；
+	\item 数乘的幺元，$\exists~1 \in \mathbb{F}$，使得 $\forall~x \in X$，$1 x = x$，
+\end{enumerate}
+
+\xjtuspchapter{附录B~算法与代码}{\vspace{-4mm}附录B\quad 算法与代码}{Algorithms and Codes}
+\setcounter{chapter}{2}
+对于数学、计算机和电子信息专业，算法和代码也是经常用到的排版技巧，如代码~\ref{list:code_appB_lms}和算法~\ref{algo:lm}所示。
+\section{代码}
+\esection{Codes}
+{\fontsize{10pt}{0.5\baselineskip}\selectfont
+	\begin{lstlisting}[caption={空时~LMS~算法~Verilog~模块端口声明},label={list:code_appB_lms}]
+	module stap_lms
+	#(
+	parameter      M                = 4,    // number of antennas
+	               L                = 5,    // length of FIR filter
+	               W_IN             = 18,   // wordlength of input data
+	               W_OUT            = 18,   // wordlength of output data
+	               W_COEF           = 20    // wordlength of weights
+	)(
+	output  signed [W_OUT-1:0]      y_i,    // in-phase component of STAP output
+	output  signed [W_OUT-1:0]      y_q,    // quadrature component of STAP output
+	output                          vout,   // data valid flag of output (high)
+	input          [M*W_IN-1:0]     u_i,    // in-phase component of M antennas
+	input          [M*W_IN-1:0]     u_q,    // quadrature component of M antennas
+	input                           vin,    // data valid flag for input (high)
+	);
+	\end{lstlisting}
 }
-
+\section{算法}
+\esection{Algorithms}
+\begin{algorithm}[!ht]  
+    \caption{ LM算法}
+    \label{algo:lm}
+    \begin{algorithmic}[1]  
+      \While {not found and $k<k_{max}$};
+        \If{$\left\|\mathbf{h}_{\mathrm{Im}}\right\| \leq \varepsilon_{2}\left[\|\mathbf{x}\|+\varepsilon_{2}\right]$}
+            \State found:=true
+        \Else
+            \If {$\varrho > 0$}
+                \State $\mathbf{x}:=\mathbf{x}_{new}$
+            \Else
+                \State $\mu:=\mu+\left[F(\mathbf{x})-F\left[\mathbf{x}_{\text {new }}\right]\right] /(2 \alpha)$;
+            \EndIf
+        \EndIf
+      \EndWhile;
+    \end{algorithmic}  
+\end{algorithm}
